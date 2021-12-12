@@ -1,6 +1,6 @@
 class Mahasiswa {
   final String status;
-  final String total;
+  final int total;
   final List<ListMahasiswa> listMahasiswa;
 
   Mahasiswa({required this.status, required this.total, required this.listMahasiswa});

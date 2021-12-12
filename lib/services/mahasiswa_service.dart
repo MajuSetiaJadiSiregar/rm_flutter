@@ -8,7 +8,6 @@ class MahasiswaService {
 
   static Future<Mahasiswa> readMahasiswa() async {
     final response = await http.get(Uri.parse(FileEnv.endpointMahasiswaRead));
-
     if(response.statusCode == 200){
       return Mahasiswa.fromJson(jsonDecode(response.body));
     } else {
