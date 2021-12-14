@@ -16,4 +16,15 @@ class MahasiswaService {
       throw Exception('Failed to load Mahasiswa');
     }
   }
+
+
+  static Future<DeleteMahasiswa> deleteMahasiswa(String id) async {
+    final response = await http.delete(Uri.parse(Envirotment.endpointDeleteMahasiswa+id));
+
+    if(response.statusCode == 200){
+      return DeleteMahasiswa.fromJson(jsonDecode(response.body));
+    } else {
+      throw Exception('Failed to Delete Mahasiswa');
+    }
+  }
 }
