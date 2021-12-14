@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myclient/controllers/mahasiswa_controller.dart';
+import 'package:myclient/pages/mahasiswa_add.dart';
 
 class MahasiswaHome extends StatelessWidget {
   final MahasiswaController mahasiswaController = Get.put(MahasiswaController());
@@ -9,6 +10,11 @@ class MahasiswaHome extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text('List Mahasiswa'),),
       body: _body(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          Get.to(() => MahasiswaAdd());
+        },
+      ),
     );
   }
 
