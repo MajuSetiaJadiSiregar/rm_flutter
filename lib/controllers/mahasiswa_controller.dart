@@ -19,4 +19,12 @@ class MahasiswaController extends GetxController {
       print(e);
     }
   }
+
+  void deleteDataMahasiwa(String id) async {
+    try {
+      var response = await MahasiswaService.deleteMahasiswa(id);
+    }catch(e){
+      print(e);
+    }
+  }
 }
