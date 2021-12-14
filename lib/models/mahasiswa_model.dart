@@ -9,7 +9,6 @@ class CreateMahasiswa {
   }
 }
 
-
 class ReadMahasiswa {
   String status;
   int total;
