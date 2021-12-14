@@ -27,4 +27,23 @@ class MahasiswaService {
       throw Exception('Failed to Delete Mahasiswa');
     }
   }
+
+  static Future<CreateMahasiswa> createNewMahasiswa(String name, String fakultas, String jurusan, String ipk) async {
+    final response = await http.post(
+      Uri.parse(Envirotment.endpointCreateMahasiswa),
+      body: jsonEncode(<String, String>{
+        "name" : name,
+        "fakultas" : fakultas,
+        "jurusan" : jurusan,
+        "ipk" : ipk
+      })
+    );
+
+    if(response.statusCode == 200){
+      print(response.body);
+      return CreateMahasiswa.fromJson(jsonDecode(response.body));
+    } else {
+      throw Exception('Failed to Create Mahasiwa');
+    }
+  }
 }

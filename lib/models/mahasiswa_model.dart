@@ -1,8 +1,8 @@
 class CreateMahasiswa {
   String msg;
-  ResponseCreateMahasiswa responseCreateMahasiswa;
+  ResponseCreateMahasiswa? responseCreateMahasiswa;
 
-  CreateMahasiswa({required this.msg, required this.responseCreateMahasiswa});
+  CreateMahasiswa({required this.msg, this.responseCreateMahasiswa});
 
   factory CreateMahasiswa.fromJson(Map<String, dynamic> json){
     return CreateMahasiswa(msg: json["msg"], responseCreateMahasiswa: ResponseCreateMahasiswa.fromJson(json["mahasiswa"]));
