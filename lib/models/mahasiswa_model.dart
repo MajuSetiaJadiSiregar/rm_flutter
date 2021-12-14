@@ -34,3 +34,15 @@ class ListMahasiswa {
     );
   }
 }
+
+
+
+class DeleteMahasiswa {
+  String msg;
+
+  DeleteMahasiswa({required this.msg});
+
+  factory DeleteMahasiswa.fromJson(Map<String, dynamic> json){
+    return DeleteMahasiswa(msg: json["msg"]);
+  }
+}
