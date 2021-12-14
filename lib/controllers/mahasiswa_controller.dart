@@ -23,6 +23,7 @@ class MahasiswaController extends GetxController {
   void deleteDataMahasiwa(String id) async {
     try {
       var response = await MahasiswaService.deleteMahasiswa(id);
+      Get.snackbar('Informatin', response.msg);
     }catch(e){
       print(e);
     }

@@ -20,7 +20,8 @@ class MahasiswaHome extends StatelessWidget {
             name: mahasiswaController.listMahasiswa[index].name,
             fakultas: mahasiswaController.listMahasiswa[index].fakultas,
             jurusan: mahasiswaController.listMahasiswa[index].jurusan,
-            ipk: mahasiswaController.listMahasiswa[index].ipk
+            ipk: mahasiswaController.listMahasiswa[index].ipk,
+            id: mahasiswaController.listMahasiswa[index].id
           );
         },
         itemCount: mahasiswaController.listMahasiswa.length,
@@ -28,7 +29,7 @@ class MahasiswaHome extends StatelessWidget {
     });
   }
 
-  Widget _listCardMahasiswa({String? name, String? fakultas, String? jurusan, String? ipk}){
+  Widget _listCardMahasiswa({String? name, String? fakultas, String? jurusan, String? ipk, String? id}){
     return Card(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -48,12 +49,15 @@ class MahasiswaHome extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
                 TextButton(
-                  child: const Text('Edit'),
-                  onPressed: () {/* ... */},
+                  child: const Text('Delete'),
+                  onPressed: () {
+                    (id !=null) ? mahasiswaController.deleteDataMahasiwa(id) : Get.snackbar('Information', 'Data id is Empty');
+                    mahasiswaController.readMahasiswa();
+                  },
                 ),
                 const SizedBox(width: 8),
                 TextButton(
-                  child: const Text('Delete'),
+                  child: const Text('Edit'),
                   onPressed: () {/* ... */},
                 ),
                 const SizedBox(width: 8),
